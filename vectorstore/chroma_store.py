@@ -8,11 +8,11 @@ from utils.logger import get_logger
 logger = get_logger(__name__)
 
 
-def create_vector_store(video_id: str):
+def create_vector_store(video: str):
 
     logger.info("Loading transcript...")
 
-    transcript = get_video_transcript(video_id)
+    transcript = get_video_transcript(video)
 
     logger.info("Splitting transcript...")
 
@@ -37,9 +37,9 @@ def create_vector_store(video_id: str):
 
 if __name__ == "__main__":
 
-    video_id = "90lLQVZe2Nc"
+    video = "https://www.youtube.com/watch?v=90lLQVZe2Nc"
 
-    vector_store = create_vector_store(video_id)
+    vector_store = create_vector_store(video)
 
     print("\nTotal Documents Stored:")
 
